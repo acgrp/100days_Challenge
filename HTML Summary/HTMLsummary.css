@@ -1,0 +1,36 @@
+img {
+  width: 200px;
+  height: 200px;
+  border: 5px solid rgb(44, 44, 44);
+}
+
+main {
+  background-color: rgb(115, 1, 182);
+  text-align: left;
+}
+
+#rkdwh {
+  color: rgb(0, 255, 115);
+}
+
+span {
+  color: rgb(61, 61, 61);
+  background-color: rgb(247, 230, 2);
+  border-radius: 8px;
+}
+
+span1 {
+    font-weight: 1000;
+}
+
+h1 {
+}
+
+a {
+}
+
+span {
+}
+
+#todays-challenge {
+}

@@ -1,0 +1,39 @@
+body {
+  background-color: rgb(172, 146, 185);
+  text-align: center;
+  color: rgb(255, 255, 255);
+  margin: 50px;
+}
+
+h {
+  font-size: 50px;
+  color: rgb(115, 1, 182);
+}
+
+h1 {
+  font-family: "Oswald", sans-serif;
+  margin: 50px auto 20px auto;
+}
+
+p1{
+    font-size: 60px;
+    font-weight: 1000;
+    color: rgb(115, 1, 182);;
+}
+p {
+  font-family: "Fira Sans", sans-serif;
+  font-size: 24px;
+}
+
+a {
+  font-size: 30px;
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+  background-color: rgb(247, 230, 2);
+  border-radius: 8px;
+  box-shadow: 1px 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+a:hover {
+  text-decoration: underline;
+}

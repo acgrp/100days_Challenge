@@ -1,0 +1,7 @@
+$ git init : 초기 세팅
+$ git remote add origin 주소 : 해당 레포짓토리 연결
+$ git remot -v : 연결 확인
+$ git remote remove origin :연결된 레포짓토리 제거
+$ git add . : 프로젝트 모든 변경사항 가져오기
+$ git commit -m "적을 메세지" : commit메세지 작성
+$ git push -u origin master : master 레포짓토리에 소스 올리기

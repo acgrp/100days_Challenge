@@ -1,8 +1,17 @@
 $ git init : 초기 세팅
 $ git status : git 상태 확인
 $ git remote add origin 주소 : 해당 레포짓토리 연결
-$ git remot -v : 연결 확인
+$ git remote -v : 연결 확인
 $ git remote remove origin :연결된 레포짓토리 제거
+$ git branch : git에 있는 브렌치 확인
+$ git branch -m main : main으로 브렌치 바꾸기
+$ git branch -D 브렌치이름 : 브렌치 삭제
+$ git checkout -b 이름 : '이름'의 브렌치 추가 
+$ git checkout -- . : 브렌치를 마지막 커밋단계로 되돌리기 (체크포인트)
+$ git merge 이름 : '이름'파일 합치기 
+$ cd 파일명 : 명령어 사용처를 '파일명'으로 변경
+$ git rm 파일명 : '파일명' 삭제 (삭제시에는 항상 해당 자료로 위치 옮기기)
+$ git reset --hard HEAD~1 : 1커밋 전 상태로 되돌리기 (숫자변경 가능)
 $ git add . : 프로젝트 모든 변경사항 가져오기
 $ git commit -m "적을 메세지" : commit메세지 작성
 $ git push -u origin master : master 레포짓토리에 소스 올리기

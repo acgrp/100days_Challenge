@@ -1,0 +1,30 @@
+#container {
+  background-color: rgb(82, 23, 81);
+  padding: 10px;
+  width: 600px;
+  display: flex;
+  align-items: center; /* 높이 똑같이 */
+  justify-content: space-between; /* space-between : 가운데, space-around : 첫1중2끝1, space-evenly : 첫1중1끝1 ,center : 좌우, flex-start : 기본값(오른쪽), flex-end : 왼쪽*/
+  /* flex-flow: row; row nowrap = flex-direction과 flex-wrap의 지름길 */
+  /* flex-direction : row; row : 옆에,  column : 밑에, column-reverse : 위치 바꿔서 밑에, row-reverse : 순서를 오른쪽에서 왼쪽으로 */
+  /* flex-wrap: nowrap;  nowrap : 웹크기에 맞게 조절(width가 없어야 가능)  */
+}
+
+p {
+  background-color: rgb(211, 88, 209);
+  margin: 10px;
+  width: 250px;
+}
+
+ul {
+  background-color: rgb(250, 146, 63);
+  list-style: none;
+  width: 250px;
+  margin: 10px;
+  padding: 0;
+}
+
+li {
+  background-color: rgb(238, 212, 192);
+  width: 100px;
+}

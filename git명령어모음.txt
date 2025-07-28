@@ -15,7 +15,9 @@ $ git reset --hard HEAD~1 : 1커밋 전 상태로 되돌리기 (숫자변경 가
 $ git add . : 프로젝트 모든 변경사항 가져오기
 $ git commit -m "적을 메세지" : commit메세지 작성
 $ git push -u origin master : master 레포짓토리에 소스 올리기
+$ git 
 $ git log : 모든 커밋 개요확인
 $ git -- version : 설치된 git 버전확인
 $ git config --global user.name : git 유저 이름 확인
 $ git config --global user.email : git 유저 이메일 확인
+$ git clone 킷허브코드주소 . : 킷허브에서 파일을 복사해와 현재파일에 다운

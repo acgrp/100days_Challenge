@@ -1,0 +1,34 @@
+div {
+  background-color: #c7c7c7;
+  padding: 20px;
+  text-align: center;
+}
+
+p {
+  color: black;
+  padding: 50px;
+  margin: 0;
+}
+
+#container {
+  background-color: #521751;
+
+}
+
+#container p {
+  color: white;
+}
+
+#one {
+  background-color: #943092;
+}
+
+#two {
+  background-color: #c95bc7;
+  position: absolute; /*absolute : 따로 적용(position: relative가 적용된 첫번째 선조에 적용), static : 기본값 고정, relative : 조정 가능, fixed : 화면을 기준으로 고정 */
+  top: 0; /*left, right, bottom 도 가능 */
+}
+
+#three {
+  background-color: #dd61db;
+}

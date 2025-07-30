@@ -46,5 +46,45 @@
 }
 
 #hero-content a:hover {
-    background-color: rgb(72, 19, 219);
+    background-color: rgb(255, 238, 0);
+}
+
+#highlights h2{
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 40px;
+    color: rgb(59, 65, 64);
+    margin: 24px 0;
+}
+
+#Destinations {
+    display: flex;
+    width: 90%;
+    margin: auto;
+    margin-bottom: 40px;
+    justify-content: center;
+}
+
+.Destinations {
+    margin: 0 20px;
+    text-transform: uppercase;
+}
+
+.Destinations p {
+    text-align: center;
+    font-size: 24px;
+    color: rgb(124, 123, 123);
+    margin: 20px 0;
+}
+
+.Destinations strong {
+    color: rgb(0, 160, 117);
+}
+
+.Destinations img {
+    height: 200px;
+    width: 100%;    /*서로 크기가 달라서 각자 크기가 다름, 고정값으로 해도 flex box가 남은 공간이 생기기때문에 %로 해결*/
+    box-shadow: 2px 4px 8px rgb(68, 67, 67);
+    border-radius: 10px;
+    object-fit: cover;  /*이미지가 담기는 비율을 조절하는 부분(fill : 기본값으로 찌그러질수 있음, contain : 컨테이너에 빈공간을 만들어 채움, cover : 비율 그대로 컨테이너에 꽉 채우기  )*/
 }

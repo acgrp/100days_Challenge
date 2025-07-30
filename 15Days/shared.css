@@ -13,12 +13,17 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 60px 15px 60px;
+    padding: 15px 60px;
+    position: absolute; /*absolute : 배경 해더까지 올리기, 이후 fixed : 상단에 고정*/
+    width: 100%;
+    box-sizing: border-box;  /*width 100%을 사용하면 header가 body보다 크던걸 같게만듬듬 */
+    top: 0;
+    left: 0;   /*position: absolute; 때문에 0으로 이미 되어있어서 불필요*/
 }
 
 #page-logo a {
     padding: 10px;
-    font-family: "Bitcount Prop Single", sans-serif;
+    font-family: "Bitcount Prop Single", sans-serif ; 
     color: rgb(207, 206, 108);
     font-size: 50px;
     text-decoration: NONE;
@@ -32,5 +37,18 @@ header ul {
 
 header li {
     margin-left: 20px;
+}
 
+header a {
+    color: rgb(255, 251, 0);
+    text-decoration: none;
+    font-size: 20px;
+    padding: 12px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0);
+    border-radius: 6px;
+}
+
+header a:hover {
+    color: rgb(77, 77, 77);
+    background-color: rgb(255, 251, 0);
 }

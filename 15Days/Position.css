@@ -27,6 +27,10 @@ p {
   background-color: #c95bc7;
   position: absolute; /*absolute : 따로 적용(position: relative가 적용된 첫번째 선조에 적용), static : 기본값 고정, relative : 조정 가능, fixed : 화면을 기준으로 고정 */
   top: 0; /*left, right, bottom 도 가능 */
+  left: 0;
+  width: 100%;   /*100%의 경우 부모의 전체 넓이와 동일*/ 
+  box-sizing: border-box;   /*border-box : margin+border+padding=100% */
+  
 }
 
 #three {

@@ -1,0 +1,31 @@
+VS-Code-Memo(HTML)
+
+[구조와 레이아웃]
+<html></html>  : 전체 문서를 감싸는 태그
+<head></head>  : 문서의 정보영역 (제목, 링크, 메타 등등)
+<body></body>  : 화면에 보이는 내용
+<main></main>  : 주요 콘텐츠(페이지의 주된 내용을 적는곳)
+<header></header>  : 페이지나 섹션의 머리말
+<footer></footer>  : 페이지나 섹션의 꼬리말
+<section></section>  : 콘텐츠 영역 분할
+<div></div>  : 의미 없는 구룹 묶음(주로 디자인용)
+
+[테긋트 관련]
+<h1~h5></h`~h5>  : 제목
+<p></p>  : 문단(내용)
+<strong></strong>  : 강조부분(글씨 굵어짐)
+<small></small>  : 작은 글씨(string반대)
+<del></del>  : 취소선 (삭선)
+
+[링크 & 미디어 태그]
+<a>  : 링크 (<a href="주소">주소</a>)
+<img></img>  : 이미지 삽입(<img src="사진파일 있는 경로" alt="사진설명">)
+
+[리스트 태그]
+<ul></ul>  : 순서 없는 목록 (-, -, -... 으로 리스트에 표시)
+<ol></ol>  : 순서 있는 목록 (1, 2, 3... 으로 리스트에 표시)
+<li></li>  : ul나 ol속에 들어가는 리스트의 항목
+
+[기타 특수 태그]
+<!DOCTYPE html>  : HTML5 문서 선언 (맨 위 필수)
+<link>  : 외부 CSS 연결(<link href="style.css" rel="stylesheet">)

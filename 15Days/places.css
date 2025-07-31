@@ -1,0 +1,13 @@
+body {
+    background: linear-gradient(30deg, rgb(77, 77, 77), rgb(58, 58, 58));
+}
+
+header {
+    position: static; /*특정 페이지&상황에서 덮어쓸때 사용*/
+
+}
+
+main li img {
+    width: 300px;
+    height: 280px;  /*이미지만 사용가능*/
+}

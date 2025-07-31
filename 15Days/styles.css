@@ -49,6 +49,11 @@
     background-color: rgb(255, 238, 0);
 }
 
+#highlights {
+    padding: 24px;
+    background: linear-gradient(45deg, rgb(227,255,253), rgb(98, 201, 178));  /*deg는 각도 - 360도 시계방향으로 회전, 첫번째색이 아래 두번째색이 위에로 지정*/
+}
+
 #highlights h2{
     text-transform: uppercase;
     text-align: center;
@@ -62,7 +67,7 @@
     width: 90%;
     margin: auto;
     margin-bottom: 40px;
-    justify-content: center;
+    justify-content: center;   /*flex box의 내용을 가운데로 모으는 것*/
 }
 
 .Destinations {

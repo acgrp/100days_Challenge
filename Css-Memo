@@ -1,0 +1,52 @@
+VS-Code-Memo(CSS)
+
+1. [색상관련]
+color: 색;  : 글자색변경
+background-color: 색;  : 배경색변경
+opacity: 수치;  : 투명도(0~1까지 설정가능)
+background-image: 주소(경로);  : 배경 이미지변경
+background: linear-gradient(45deg(각도), 색1, 색2)  : 그라데이션 색상
+        *(색1이 아래 색2가 위, 각도에 따라 시계방향으로 회전)
+
+2. [글자/폰트 관련]
+font-size: 크기px;  : 글자 크기
+font-weight: 원하는 굵기;  : 글자 굵기 (normal, bold, 400, 700)	
+font-family: '글꼴이름', sans-serif;  : 글꼴 설정
+text-align: 위치;  : 정렬 (left, center, right)
+line-height: 숫자;  : 줄 간격(1, 1.6)
+text-decoration: 타입;  : 밑줄/취소선 (none, underline, line-through)
+text-transform: 타입;  : 전부 대소문자 변환 (uppercase, lowercase)
+letter-spacing: 크기px;  : 글자 간격	letter-spacing: 2px;
+
+3. [크기/여백 관련]
+width / height: 크기;  : 너비 / 높이(px, %사용가능)
+padding: 크기px;  : 내부 여백
+margin: 크기px;  : 외부 여백
+box-sizing:타입;  : 박스 크기 계산 방식( border-box = margin + border + padding = 100%)
+max-width / min-height: 숫자%;  : 최대/최소 크기
+box-shadow: 두께 두께 두께 색;  : 박스 테두리에 그림자 설정
+object-fit: 방식;  이미지가 담기는 비율을 조절하는 부분
+        *(fill : 기본값(찌그러질수 있음), contain : (빈공간을 만들어 채움), cover : (비율 그대로 꽉 채우기))
+
+4. [박스/테두리 관련]
+border: 두께px 색상  : 테두리 설정
+border-radius: 강도px  : 둥근 테두리
+box-shadow	그림자	box-shadow: 2px 2px 5px gray;
+
+5. [위치/레이아웃 관련]
+position: 타입;  : 위치방식
+        *(absolute : 배경 해더까지 올리기, fixed : 해당 위치 고정, static : 기본값, relative : 조정 가능)
+top/ left/ right/ bottom: 크기;  : 위치 지정
+
+6. [Flexbox (레이아웃 정렬용)]
+flex-direction:방뱡;  : 정렬 방향	
+        * row : 옆에,  column : 밑에, column-reverse : 위치 바꿔서 밑에, row-reverse : 순서를 오른쪽에서 왼쪽으로
+flex-wrap: nowrap;  nowrap : 웹크기에 맞게 조절(width가 없어야 가능)
+justify-content: 방식;  : 플렉스 컨테이너 정렬
+(빈공간 위치)*space-between : 가운데, space-around : 첫1중2끝1, space-evenly : 첫1중1끝1 ,center : 좌우, flex-start : 기본값, flex-end : 왼쪽
+
+[기타]
+선택자	설명	예시
+#id이름  : id로 선택
+.class이름  : 클래스 선택
+대상(ex> a, h1...):hover  : 마우스 올렸을 때 변화 (ex> a:hover { color: red; text-decoration: underline;})

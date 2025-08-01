@@ -39,9 +39,10 @@ position: 타입;  : 위치방식
 top/ left/ right/ bottom: 크기;  : 위치 지정
 
 6. [Flexbox (레이아웃 정렬용)]
+display: flex;  : 플렉스 선언
 flex-direction:방뱡;  : 정렬 방향	
-        * row : 옆에,  column : 밑에, column-reverse : 위치 바꿔서 밑에, row-reverse : 순서를 오른쪽에서 왼쪽으로
-flex-wrap: nowrap;  nowrap : 웹크기에 맞게 조절(width가 없어야 가능)
+        * row : 옆에,  column : 밑으로 나열, column-reverse : 위치 바꿔서 밑에, row-reverse : 순서를 오른쪽에서 왼쪽으로
+flex-wrap: wrap;  wrap : 웹크기에 맞게 넣기(width가 없어야 가능)
 justify-content: 방식;  : 플렉스 컨테이너 정렬
 (빈공간 위치)*space-between : 가운데, space-around : 첫1중2끝1, space-evenly : 첫1중1끝1 ,center : 좌우, flex-start : 기본값, flex-end : 왼쪽
 

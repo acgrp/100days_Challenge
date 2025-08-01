@@ -14,8 +14,8 @@ $ git rm 파일명 : '파일명' 삭제 (삭제시에는 항상 해당 자료로
 $ git reset --hard HEAD~1 : 1커밋 전 상태로 되돌리기 (숫자변경 가능)
 $ git add . : 프로젝트 모든 변경사항 가져오기
 $ git commit -m "적을 메세지" : commit메세지 작성
+$ git commit --amend -m "적을 메세지" : 잘못올렷을 경우 add한번 더 하고 덧붙이기
 $ git push -u origin master : master 레포짓토리에 소스 올리기
-$ git 
 $ git log : 모든 커밋 개요확인
 $ git -- version : 설치된 git 버전확인
 $ git config --global user.name : git 유저 이름 확인

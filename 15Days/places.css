@@ -1,5 +1,6 @@
 body {
     background: linear-gradient(30deg, rgb(77, 77, 77), rgb(58, 58, 58));
+    color: rgb(68, 68, 68);
 }
 
 header {
@@ -7,7 +8,46 @@ header {
 
 }
 
+main ul {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+main li {
+    display: flex;
+    background-color: white;
+    box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.2);   /*좌우 상하 반경 색*/
+    border-radius: 6px;
+    overflow: hidden;  /*컨테이너를 초과하는 것을 고정(visible : 기본값, hidden : 스타일변화)*/
+    width: 500px;
+}
+
+
 main li img {
     width: 300px;
-    height: 280px;  /*이미지만 사용가능*/
+    height: 280px;
+    object-fit: cover;
+}
+
+.item-content {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.actions {
+    text-align: right;
+}
+
+.actions a {
+    text-decoration: none;
+    padding: 6px;
+    color: rgb(22, 211, 228);
+    font-weight: 600;
+    border-radius: 6px;
+}
+.actions a:hover {
+    background-color: rgb(22, 211, 228);
+    color: white;
 }

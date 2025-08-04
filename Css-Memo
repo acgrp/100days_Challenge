@@ -43,12 +43,14 @@ display: flex;  : 플렉스 선언 (grid도 가능)
 flex-direction:방뱡;  : 정렬 방향	
 ;        * row : 옆에,  column : 밑으로 나열, column-reverse : 위치 바꿔서 밑에, row-reverse : 순서를 오른쪽에서 왼쪽으로
 flex-wrap: wrap;  wrap : 웹크기에 맞게 넣기(width가 없어야 가능)
+justify-content: center;   가로 방향 전체를 가운데 정렬
 justify-content: 방식;  : 플렉스 컨테이너 정렬
 (빈공간 위치)*space-between : 가운데, space-around; : 첫1중2끝1, space-evenly : 첫1중1끝1 ,center : 좌우, flex-start : 기본값, flex-end : 왼쪽
 grid-template-columns:비율(크기), ...;  : 열의 수와 비율을 정할수 있음(px, fr단위 가능)
 gap: 새로px 가로px;  : 각 열 사이의 공간 확보
 
-7. [기타]
+
+7.  [기타]
 선택자	설명	예시
 #id이름  : id로 선택
 .class이름  : 클래스 선택

@@ -29,3 +29,6 @@ VS-Code-Memo(HTML)
 [기타 특수 태그]
 <!DOCTYPE html>  : HTML5 문서 선언 (맨 위 필수)
 <link>  : 외부 CSS 연결(<link href="style.css" rel="stylesheet">)
+&#x숫자  : 하이퍼링크 코멘트 뒤에 &#x숫자를 붙이면 해당 코드에 맞는 모양이 등장
+        * https://en.wikipedia.org/wiki/Arrows_(Unicode_block) <- 링크 확인
+

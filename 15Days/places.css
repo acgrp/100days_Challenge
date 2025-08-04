@@ -3,15 +3,36 @@ body {
     color: rgb(68, 68, 68);
 }
 
+#page-logo a {
+    color: rgb(183, 230, 235);
+}
+
 header {
     position: static; /*특정 페이지&상황에서 덮어쓸때 사용*/
 
 }
 
+header a {
+    color: rgb(183, 230, 235);
+}
+
+header nav a:hover {
+    background-color: rgb(183, 230, 235);
+    color: rgb(59, 59, 59);
+}
+
 main ul {
     width: 1200px;
-    margin: 0 auto;
+    margin: 0 auto 48px auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px 20px;
 }
+
+li:nth-of-type(3) {
+    grid-column: 1/ span 2;
+}
+
 
 main li {
     display: flex;
@@ -19,7 +40,6 @@ main li {
     box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.2);   /*좌우 상하 반경 색*/
     border-radius: 6px;
     overflow: hidden;  /*컨테이너를 초과하는 것을 고정(visible : 기본값, hidden : 스타일변화)*/
-    width: 500px;
 }
 
 
@@ -34,6 +54,10 @@ main li img {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+}
+
+.item-content h2 {
+    margin: 0;
 }
 
 .actions {

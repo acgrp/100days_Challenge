@@ -48,7 +48,7 @@ header a {
     border-radius: 6px;
 }
 
-header a:hover {
+header nav a:hover {
     color: rgb(77, 77, 77);
     background-color: rgb(255, 251, 0);
 }
@@ -61,7 +61,6 @@ footer {
 footer ul {
     display: flex;  /*아이콘들 옆으로 정렬*/
     justify-content: center;   /*플렉스 컨테이너 가운데로 옮기고 남은 빈공간은 좌우에 배치*/
-    /* padding: 40px; */
 }
 
 footer li  {

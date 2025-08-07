@@ -9,16 +9,16 @@ a {
 }
 
 #main-header {
-    height: 80px;
+    height: 5rem;
     display: flex;
     justify-content: space-between;
     align-items: center;  /*새로 중앙 정렬*/
     background-color: rgb(29, 26, 24);
-    padding: 0 20px;
+    padding: 0 5%;
 }
 
 #logo {
-    font-size: 24px;
+    font-size: 1.5rem;
     font-weight: bold;
     color: rgb(238, 164, 80);
     text-transform: uppercase;  /*대무자로 변경*/
@@ -32,12 +32,12 @@ a {
 }
 
 #main-header li{
-    margin: 0 16px;    
+    margin: 0 1rem;    
 }
 
 #main-header nav a {
     color: rgb(185, 131, 31);
-    font-size: 20px;
+    font-size: 1.25rem;
 }
 
 #main-header nav a:hover {
@@ -47,44 +47,53 @@ a {
 main h1 {
     text-align: center;
     color: rgb(238, 164, 80);
-    font-size: 48px;
+    font-size: 3rem;
 }
 
 #latest-products {
     width: 80%;
-    margin: 50px auto;
+    margin: 2rem auto;
 }
 
 #latest-products ul {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 16px;
+    gap: 1rem;
+    list-style: none;  /*개발자 도구에서 Marker 지우기*/
 }
 
 .food-items {
     background-color: rgb(228, 206, 182);
-    border-radius: 6px;
+    border-radius: 6px;  /*경계선 곡률은 px이 좋음*/
     overflow: hidden;    /*내부가 미리 정해진 레이아웃으로 정해짐*/
 }
 
 
 .food-items img {
-    height: 240px;
+    height: 15rem;
     width: 100%;
     object-fit:  cover;
 
 }
 
-.food-item-content {
-    padding: 16px;
+.food-item-content { 
+    /* padding: 16px; */
+    /* padding: 10%; 부모 요소의 기반해서 크기 설정 */
+    /* padding: 0.1em;  해당 font크기에 연관되어서 정해짐(44px -> 4.4px) */
+    padding: 1rem; /*em과 다르게 브라우저 설정에서 연관되기때문에 (16px -> 1.6px)*/
     text-align: center;
-}  
+} 
+
+h2 {
+    /* font-size: 200%; 부모 크기 따라감, 없으면 브라우저 기본 설정(1em  =  100%) */
+    font-size: 2rem;  /*최상위 설정을 따라감(html요소를 따라감)*/
+}
 
 .btn {
     background-color: rgb(228, 157, 44);
     color: white;
     border-radius: 4px;
-    padding: 8px 24px;
+    padding: 0.5rem 1.5rem;
 }
 
 .btn:hover {

@@ -9,6 +9,8 @@ VS-Code-Memo(HTML)
 <footer></footer>  : 페이지나 섹션의 꼬리말
 <section></section>  : 콘텐츠 영역 분할
 <div></div>  : 의미 없는 구룹 묶음(주로 디자인용)
+<span></span>  : 햄버거 만들때 사용...(?)
+<aside></aside>  : 사이드바 만들때 사용(main이랑 동급(?))
 
 [테긋트 관련]
 <h1~h5></h`~h5>  : 제목

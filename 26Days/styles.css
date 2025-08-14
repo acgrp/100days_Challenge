@@ -1,0 +1,10 @@
+body {
+    background-color: rgb(31, 31, 31);
+    margin: 8rem;
+}
+
+input {
+    width: 20rem;
+    display: block;  /*기본은 인라인이여서 옆에 설치됨, block으로 아래 설치*/
+    margin-bottom: 1rem;
+}

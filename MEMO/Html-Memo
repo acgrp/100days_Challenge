@@ -12,6 +12,8 @@ VS-Code-Memo(HTML)
 <span></span>  : 햄버거 만들때 사용...(?)
 <aside></aside>  : 사이드바 만들때 사용(main이랑 동급(?))
 
+<input>  : 
+
 [테긋트 관련]
 <h1~h5></h`~h5>  : 제목
 <p></p>  : 문단(내용)

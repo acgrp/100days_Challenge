@@ -12,7 +12,10 @@ VS-Code-Memo(HTML)
 <span></span>  : 햄버거 만들때 사용...(?)
 <aside></aside>  : 사이드바 만들때 사용(main이랑 동급(?))
 
-<input>  : 
+<form></form>  : 검색 창을 만드는 공간
+<label></label>  : 검색창 제목 생성 (for에 input에 있는 id와 동일하게 설정하면 제몰을 눌러도 검색 가능)
+<input>  : 검색창 생성
+<button></button>  : 검색창에 대한 버튼 생성 (인라인이라 옆으로 나열)
 
 [테긋트 관련]
 <h1~h5></h`~h5>  : 제목

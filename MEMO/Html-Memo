@@ -14,8 +14,13 @@ VS-Code-Memo(HTML)
 
 <form></form>  : 검색 창을 만드는 공간
 <label></label>  : 검색창 제목 생성 (for에 input에 있는 id와 동일하게 설정하면 제몰을 눌러도 검색 가능)
-<input>  : 검색창 생성
+<input>  : 검색창 생성 
+    (text, email<@생성 및 이메일보조>, number<화살표 버튼 생성, 숫자만>, password<입력칸을 숨김>, birthdate<날짜 입력 버튼 생성>, radio<선택 창 등장,이름동일시 하나만 가능, checkbox<체크박스 생성>, select<선택창 추가>)
+<hr>  : 구간을 나누는 수평선을 생성
 <button></button>  : 검색창에 대한 버튼 생성 (인라인이라 옆으로 나열)
+    (submit<제출하는 기본값>, button<눌러도 전송이 안되는 그저 버튼>, reset<적었던 것들을 초기화 시키는 버튼>)
+<textarea></textarea>  : 글을 쓰는 공간 (줄바꾸기도 가능)
+
 
 [테긋트 관련]
 <h1~h5></h`~h5>  : 제목
@@ -38,4 +43,9 @@ VS-Code-Memo(HTML)
 <link>  : 외부 CSS 연결(<link href="style.css" rel="stylesheet">)
 &#x숫자  : 하이퍼링크 코멘트 뒤에 &#x숫자를 붙이면 해당 코드에 맞는 모양이 등장
         * https://en.wikipedia.org/wiki/Arrows_(Unicode_block) <- 링크 확인
-
+novalidate  : 내장된 검증 헤제 (EX> email input의 경우 이메일 보조 삭제)      
+required  : 빈칸으로 제출 불가능하게 만듬  
+rows  : textarea의 공간을 지정(단, 크기조절은 기본 가능<CSS에서 수정>)
+max/minlength  : 해당 숫자 수 만큼 숫자를 제한
+max / min  : 최대값 / 최소값
+    (birthday에는 날짜 선택제한 범위설정)

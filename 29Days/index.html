@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Forms</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libertinus+Sans:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Contact Us</h1>
+    </header>
+    <form action="#" method="GET">
+        <section>
+            <h2>How can we help you?</h2>
+            <ul>
+                <li>
+                    <label for="username">Your name</label>
+                    <input type="text" name="user-name" id="username" required placeholder="(Ex) Steve"/>
+                </li>
+                <li>    
+                    <label for="useremail">Your E-mail Address</label>
+                    <input type="email" name="user-email" id="useremail" required>
+                </li>
+                <li>
+                    <label for="userphonenumber">Your Phone Number</label>
+                    <input type="phonenumber" name="user-phonenumber" id="userphonenumber" required minlength="11">
+                </li>
+                <li>
+                    <label for="usermessage">Your Message</label>
+                    <textarea name="usermessage" id="usermessage" placeholder="메세지를 입력하세요." required maxlength="200" rows="6"></textarea>
+                </li>
+                <li>
+                    <label for="userfrom">How did you find us?</label>
+                    <select name="user-from" id="userfrom">
+                        <option value="Web Search">Web Search</option>
+                        <option value="Word-of-Mouth">Word of Mouth</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>How should we reply?</h2>
+            <ul>
+                <li class="form-control-inline">
+                    <input type="radio" id="callme" name="callme" value="callme">
+                    <label for="callme">Call me</label>
+                </li>
+                <li class="form-control-inline">
+                    <input type="radio" id="Sendme" name="Sendme" value="Sendme">
+                    <label for="Send-me-an-email">Send me an email</label>
+                </li>
+                <li class="form-control-inline">
+                    <input type="radio" id="Dontreply" name="Dontreply" value="Dontreply">
+                    <label for="Don't-reply">Don't reply</label>                    
+                </li>
+            </ul>
+        </section>
+        <hr />
+        <section>
+                <div class="form-control-inline">
+                    <input type="checkbox" id="accept-terms" name="terms">
+                    <label for="accept-terms">Accept terms</label>
+                </div>
+        </section>
+        <section id="button">
+            <button class="close" type="close">Close</button>
+            <button class="submit" type="submit">Submit</button>
+        </section>
+    </form>
+</body>
+</html>

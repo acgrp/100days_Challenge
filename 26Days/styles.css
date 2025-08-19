@@ -78,9 +78,3 @@ button:hover {
     width: auto;
     margin-right: 0.5rem;
 }
-input:focus,
-textarea:focus {
-    background-color: rgb(219, 190, 253);
-    color: rgb(32, 5, 63);
-    border-color: rgb(32, 5, 63);
-}

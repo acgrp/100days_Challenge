@@ -49,7 +49,7 @@ rows  : textarea의 공간을 지정(단, 크기조절은 기본 가능<CSS에�
 max/minlength  : 해당 숫자 수 만큼 숫자를 제한
 max / min  : 최대값 / 최소값
     (birthday에는 날짜 선택제한 범위설정)
-
+test
 [자바 스크립트]
 **...js  : 자바스크립트 파일양식
 <script></script>  : 자바 스크립트를 사용하기 위한 공간(text는 ""나 ''를 사용해야함, 숫자는 그냥사용)

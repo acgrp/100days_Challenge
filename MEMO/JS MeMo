@@ -1,0 +1,13 @@
+요소 선택    document.getElementById("id")	          id로 요소 가져오기 (단 하나)		        
+            document.getElementsByClassName("class") 같은 class 가진 모든 요소 가져오기 (배열 비슷함)		
+            document.getElementsByTagName("tag")	 특정 태그(p, div 등) 전부 가져오기	
+            document.querySelector("선택자")	      CSS 선택자로 첫 번째 요소만 가져오기	  
+            document.querySelectorAll("선택자")	      CSS 선택자로 모든 요소 가져오기 (NodeList)	
+내용 변경    .textContent	                          텍스트만 변경 (HTML 태그는 글자로 처리됨)		
+            .innerHTML	                             HTML 태그 포함해서 내용 변경
+속성 변경	 .setAttribute("속성", "값")	           속성 값 변경	
+            .getAttribute("속성")	                  속성 값 가져오기	
+스타일 변경	  .style.속성명                             CSS 속성 변경 (카멜케이스 사용)	
+클래스 제어	  .classList.add("이름")	                클래스 추가	
+	        .classList.remove("이름")	              클래스 제거		
+            .classList.toggle("이름")	              있으면 제거, 없으면 추가	

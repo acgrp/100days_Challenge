@@ -12,7 +12,7 @@ if (!isLoggedIn) {
     console.log('User is NOT logged in!');
 }
 
-const enteredUserName = '';
+const enteredUserName = ''; //0(false)
 
 if (!enteredUserName) {
     console.log('input is valid!')

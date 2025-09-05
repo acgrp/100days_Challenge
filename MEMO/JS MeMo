@@ -11,3 +11,7 @@
 클래스 제어	  .classList.add("이름")	                클래스 추가	
 	        .classList.remove("이름")	              클래스 제거		
             .classList.toggle("이름")	              있으면 제거, 없으면 추가	
+
+
+
+            .addEventListener

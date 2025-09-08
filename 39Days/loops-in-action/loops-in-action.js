@@ -19,3 +19,81 @@ function calculateSum() {
 }
 
 sumBotton.addEventListener('click', calculateSum);  // 1. sumBotton클릭시 CalculateSum 실행
+ 
+
+//HighLight links
+
+const highlightBTN = document.querySelector('#highlight-links button');
+
+function highlightLinks() {
+    const anchorElements = document.querySelectorAll('#highlight-links a');
+
+    for (const anchorElement of anchorElements) {
+        anchorElement.classList.add('highlight');
+    }
+}
+
+highlightBTN.addEventListener('click', highlightLinks);
+
+// Displat user data
+
+const dummyUserData = {
+    firstName: 'Jin',
+    lastName: 'seo',
+    age: 26
+};
+
+const displayUserDB = document.querySelector('#user-data button');
+
+function displayUserD() {
+    const outputDataElement = document.getElementById('output-user-data');
+
+    outputDataElement.innerHTML = '';
+
+    for (const key in dummyUserData) {
+        const newUserD = document.createElement('li');
+        const outputText = key.toUpperCase() + ': ' + dummyUserData[key];
+        newUserD.textContent = outputText;
+        outputDataElement.append(newUserD);
+    }
+}
+
+displayUserDB.addEventListener('click', displayUserD)
+
+// Statistics / Roll the Dice
+
+const rollDiceButtonElement = document.querySelector('#statistics button');
+
+function rollDice () {
+    return Math.floor(Math.random() * 6 + 1); // 1~6숫자를 무작위로 출력 (Math.floor은 소숫점 버림)
+}
+
+function DiceofRoll() {
+    const targetNumberInputElement = document.getElementById('user-target-number');
+    const diceRollsListElement = document.getElementById('dice-rolls');
+
+    const enteredNumber = targetNumberInputElement.value; //targetNumberInputElement의 값을 enteredNUmber에 기록
+    diceRollsListElement.innerHTML = '';       //다음번 시작될시, 이전 기록 삭제
+
+    let hasRTN = false; //계속 굴리는 조건
+    let numberOR = 0;  //주사위 횟수
+
+    while (!hasRTN) {   //hasRTN의 false라는 뜻, 즉 true
+        const rolledNum = rollDice(); //rollDice의 값을 rolledNum에 추가
+
+        numberOR++;    //rollDiceButtonElement버튼을 누르고 횟수만큼 숫자 증가
+        const newRLE = document.createElement('li');  //newRLE라는 곳에[ li을 만들어 주사위 횟수와 결과를 저장하려는 계획]
+        const outputText = 'Roll ' + numberOR + ': ' + rolledNum; //결과마다 값을 붙임
+        newRLE.textContent = outputText;  // 위에서 붙인 값을 text로 출력
+        diceRollsListElement.append(newRLE);  // ul속에 li에 결과를 과정과 함께 집어넣음
+        hasRTN = rolledNum == enteredNumber; // 원하는 값과 굴리는 값이 일치하면 정지
+    }
+
+    const outputTRE = document.getElementById('output-total-rolls'); // 몇번했는지 입력
+    const outputTNE = document.getElementById('output-target-number'); // 원하는 숫자가 뭐였는지 입력
+
+    outputTNE.textContent = enteredNumber; //몇번했는지 출력
+    outputTRE.textContent = numberOR; // 원하는 숫자 출력
+}
+
+rollDiceButtonElement.addEventListener('click', DiceofRoll); //rollDiceButtonElement클릭시 DiceofRoll시작

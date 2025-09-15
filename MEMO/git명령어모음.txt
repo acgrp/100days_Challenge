@@ -21,3 +21,8 @@ $ git -- version : 설치된 git 버전확인
 $ git config --global user.name : git 유저 이름 확인
 $ git config --global user.email : git 유저 이메일 확인
 $ git clone 킷허브코드주소 . : 킷허브에서 파일을 복사해와 현재파일에 다운
+
+
+
+$ node (경로)/파일이름 : 사용자 출력(서버 실행)
+$ 

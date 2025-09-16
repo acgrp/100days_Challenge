@@ -1,0 +1,14 @@
+{
+  "name": "47days",
+  "version": "1.0.0",
+  "description": "First Starting",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jinseo",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}

@@ -1,0 +1,7 @@
+$ require(); : 
+$ http.createServer() : http의 서버를 만듬
+$ server.listen(3000) : nodeJS listen에 3000을 전달
+$ response.statusCode : 반응에만 가능한 메서드(브라우저 요청의 성공 여부를 알리는 방법)
+$ request.url : Path값 (예, localhost:3000/currenttime 중 /currenttime에 해당)
+$ new Date() : 현재 타임스탬프 획득 가능(단, 객체형태)
+$ .toISOString() : 문자열 표현을 변환해서 읽을 수 있는 텍스트로 바꾸기 가능한

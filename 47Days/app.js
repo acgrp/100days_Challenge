@@ -1,50 +1,67 @@
-const fs = require('fs');  //Node에서 제공하는 파일 조작도구를 가져옴, fradFileSync/writeFileSync 를 사용할때 필요
-const path = require('path');  //파일 경로를 운영체제에 맞게 만들어주는 경로 도구를 가져옴, path.join으로 data/users.join같은 경로 제작시 필요
+const fs = require('fs');//package.json에서 가져온 fs라는 패키지(파일 시스템)
+const path = require('path');
 
-const express = require('express');  //웹서버를 쉽게 만드는 express라는 것을 가져오기
+// const http = require('http'); // Node에 내장 HTTP모듈을 불러와 http라는 이름으로 사용한다는 뜻
+const express = require('express');// package.json에서 가져온 express라는 패키지
 
-const app = express(); // express로 만든 서버 객체를 app에 담음
+const app = express();
 
-app.use(express.urlencoded({extended: false})); // 브라우저 폼이 보낸 데이터를 requst.body로 읽을 수 있게 해주는 것
+app.use(express.urlencoded({extended: false}));
 
-app.get('/currenttime', function(request, response) { // 사용자가 localhost/currenttime에 접속시 실행될 처리함수 등록
-    response.send('<h1>' + new Date().toISOString() + '</h1>'); // 현재시간을 new Date().toString()로 문자열 만들고, <h1>으로 감싸서 브라우저에 출력
-}); 
+app.get('/currenttime', function(req, res) {
+    res.send('<h1>' + new Date().toISOString() + '</h1>');
+}); //localhost:3000/currenttime
 
-app.get('/', function(request, response){ // localhost에 접속 했을때 실행될 처리 함수 등록
-    response.send('<form action="store-user" method="POST"><label>Your Name: </label><input type="text" name="username"><button>Submit</button></form>'); // 해당 폼을 브라우저에 내보냄, 입력된 값은 서버에 전송
-}); 
+app.get('/', function(req, res){
+    res.send('<form action="/store-user" method="POST"><label>Your Name:</label><input type="text" name="username"><button>Submit</button></form>');// 상태코드가 없으면 자동으로 200으로 설정
+})// action="/store-user" - 버튼 눌럿을때 데이터를 보낼 URL, method="POST" - HTTP POST방식으로 요청을 보낼 것이라는 의미, name="username"은 입력한 값이 서버에서 req.body.username으로 받을수 있게 함
 
-app.post('/store-user', function(request, response){ // 사용자가 localhost/store-user로 보내졌을때 실행되는 함수(이름을 입력하면 실행)
-    const userName = request.body.username; // 변수에 값 넣기
+app.post('/store-user', function(req, res){
+    const userName = req.body.username;
+    
+    const filePath = path.join(__dirname, 'data', 'users.json');//data파일의 users.json파일을 가르킴, path.join이 상수를 저장
 
-    const filePath = path.join(__dirname, 'data', 'users.json'); // filePath에 있는 파일을 블로킹방식으로? 읽어온다
+    const fileData = fs.readFileSync(filePath);//
+    const existingUsers = JSON.parse(fileData);//JSON객체의 parse매서드 사용, 제이슨형태의 객체가 포한된 일부 텍스트를 원시 자바스크립트 객체 또는 배열로 변환할때 사용, fileData는 파일에서 읽은 텍스트 데이터
 
-    const fileData = fs.readFileSync(filePath); // fileData에 있는 파일을 블로킹방식으로? 읽어온다
-    const existingUsers = JSON.parse(fileData); // 파일에 적힌 JSON 문자열을 자바스크립트 배열로 바꿈
+    existingUsers.push(userName);//배열 끝에 추가하는 매서드
+    
+    fs.writeFileSync(filePath, JSON.stringify(existingUsers));//stringify를 사용하기 위해 JSON사용, existingUsers를 텍스트로 해당 파일에 다시 저장, 
 
-    existingUsers.push(userName); // 읽어온 사용자 리스트를 배열에 추가
+    res.send('<h1>Username stored!</h1>');
 
-    fs.writeFileSync(filePath, JSON.stringify(existingUsers)); // 수정된 배열을 JSON 문자열로 바꿔서 파일에 저장
-    console.log(userName); // 서버콘솔에 저장한 사용자 이름을 출력 (터미널에 이름 출력)
-    response.send('<h1>Username stored!</h1>'); // 브라우저에 저장완료라고 응답
 });
 
-app.get('/users', function(request,response){
-    const filePath = path.join(__dirname, 'data', 'users.json');
+app.get('/users', function(req, res){ // users 주소로 접근시
+    const filePath = path.join(__dirname, 'data', 'users.json');//위 처럼 똑같이 배열로 모아두기
 
     const fileData = fs.readFileSync(filePath);
-    const existingUsers = JSON.parse(fileData); 
+    const existingUsers = JSON.parse(fileData);
 
-    let responseData = '<ul>';
-
-    for (const user of existingUsers) {
-        responseData += '<li>' + user + '</li>'
+    let html = '<h1>User List</h1><ul>'; //html을 새로 추가
+    for(const user of existingUsers) { // 아까의 배열을 반복문에 넣어 이름별 li로 끊어서 표기
+        html += '<li>' + user + '</li>';
     }
-
-    responseData += '</ul>';
-
-    response.send(existingUsers); 
+    html += '</ul>';//닫기
+    res.send(html);//existingUsers기존 배열이 아닌 만든 html 배열을 반환
 });
 
+
 app.listen(3000);
+
+
+
+// <node JS코드>
+// function handleRequest(request, response){ // node가 이 함수를 호출하면서 요청 응답을 전달
+//     if (request.url === '/currenttime') {// url은 localhost:3000이며 그 이후 /currenttime이 있을경우 이 방식사용
+//         response.statusCode = 200;// 응답 http 상태코드를 200으로 설정(요청 성공)
+//         response.end('<h1>' + new Date().toISOString() + '</h1>');// response.end로 해당 요청 처리를 마침, new Date()는 자바스크립트에서 현재 날짜와 시간을 담아 Date객체를 만듬, .toISOString()은 이 Date객체를 사람이 사용하기 좋은 문자열로 바꿈
+//     } else if (request.url === '/') {//localhost:3000뒤에 아무것도 없는 상황을 가정
+//         response.statusCode = 200; // 응답코드 200
+//         response.end('<h1>Hello World!</h1>');// hello world으로 응답하고 종료
+//     }
+// }
+
+// const server = http.createServer(handleRequest);// http서버 객체를 만들고 요청이 올때마다 handleRequeset를 호출
+
+// server.listen(3000);//서버를 포트 3000에서 실행, 이제 접속하면 반응

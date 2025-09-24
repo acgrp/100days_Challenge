@@ -1,16 +1,17 @@
 {
   "name": "47days",
   "version": "1.0.0",
-  "description": "First Starting",
+  "description": "Getting started with Node & Express",
   "main": "app.js",
   "scripts": {
     "start": "nodemon app.js"
   },
-  "author": "Jinseo",
+  "author": "Jinseo Jang",
   "license": "MIT",
   "dependencies": {
-    "express": "^5.1.0",
+    "express": "^5.1.0"
+  },
+  "devDependencies": {
     "nodemon": "^3.1.10"
   }
 }
-

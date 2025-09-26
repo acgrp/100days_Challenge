@@ -36,3 +36,38 @@ DATASET     element.dataset.playerid                 data- 속성 가져오기(H
 함수 호출 & 
 실행 순서    function 함수명() { ... }                 함수 정의
             함수명()                                  함수 호출
+
+nodeJS
+            [Ctrl + C]                            실행중인 것 닫기
+            node app.js                           운영체제에 app.js파일을 보내는 명령어(실행할때도 사용)
+
+
+            const http = require('http')             Node에 내장 HTTP모듈을 불러와 http라는 이름을 사용
+            app.listen(3000)                         포트 3000으로 실행할경우 연결 허용
+            request.url === '/currenttime'           주소끝에 /currenttime일 경우
+            response.statusCode = 200                응답의 http상태 코드를 200으로 설정(요청 성공이라는 뜻)
+            response.end(내용)                        내용을 반환하며 해당 함수 종료
+            const path = require('path')             NodeJS에서 제공하는 내장모듈, 파일경로 디렉토리 경로를 다룰수 있게됨
+            path.join()                              경로들을 알아서 합쳐줌
+            path.basename()                          파일 이름만 뽑아줌
+            path.dirname()                           폴더 경로만 뽑아줌
+            path.extname()                           확장자만 뽑아줌
+
+            npm init                                 npm을 사용하기전 적용
+            npm install express                      express를 설치
+            npm install nodemon                      노드몬 설치(저장되는 서버 생성 가능)
+            npm start                                노드몬 설치후 사용가능, 실시간 서버
+            npm install ejs                          ejs템플릿엔진 다운
+            <%= numberOfRestaurants %>               ejs에 들어가는 템플릿 엔진으로 해당부분은 변경 가능, 개발자도구에도 흔적x
+              *이후 app.js에 res.render("",{numberOfRestaurants: 값, 대상 : 값2}) 을 넣어 값을 지정해줘야 완성
+            <%- include('파일경로', {키:해당 객체}) %>  파일경로에 있는 코드를 가져옴, 반복문같은 키를 사용할경우 그 해당 키가 어떤의미인지 연결해줘야함
+EXPRESS
+            app.get(조건, 함수){내용}                  조건에 해당하는 함수 가져옴(함수 자리에는 함수이름 혹은 function(){}도 가능)                       
+            res.send(반환내용)                        함수 조건에 맞을경우 반환내용을 반환, end와 비슷한 의미
+            const express = require('express')       package.json에서 가져온 express라는 패키지
+            express.urlencoded                       Express에서 제공하는 내장 미들웨어, HTML <form>에서 보내는 데이터 형식, 사용자가 <form>에 입력해서 POST로 보낸 데이터를 읽고 해석후 req.body에 넣어주는 역할
+            extended: false                          데이터 파싱 방식을 설정하는 옵션(false - 단순한 key=value 쌍만 해석 가능, true - 중첩객체/배열 구조까지 해석 가능)
+            app.use(...)                             미들웨어를 모든 요청에 적용, 서버로 들어오는 모든 요청은 미들웨어를 거쳐서 req.body가 자동으로 준비됨
+            배열.push(내용)                           배열 끝에 내용을 추가하는 매서드
+            express.urlencoded({extended: false})    urlencoded방식의 요청 본문을 파싱해서 req.body에 객체로 담아줌
+            extended: false / true                   false는 문자열로 파싱/ true는 객체로 파싱

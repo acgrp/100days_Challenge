@@ -1,2 +1,9 @@
 $ [Ctrl + C] : 실행중인 것 닫기
 $ node app.js : 운영체제에 app.js파일을 보내는 명령어(실행할때도 사용)
+
+  <npm> 자바스크립트에서 다른 패키지를 사용하기 위한 명령어
+$ npm init : npm을 사용하기전 적용
+$ npm install express : express를 설치
+$ npm install nodemon : 노드몬 설치(저장되는 서버 생성 가능)
+$ npm install nodemon --save-dev : 
+$ npm start : 노드몬 설치후 사용가능, 실시간 서버

@@ -25,4 +25,5 @@ $ git clone 킷허브코드주소 . : 킷허브에서 파일을 복사해와 현
 
 
 $ node (경로)/파일이름 : 사용자 출력(서버 실행)
-$ 
+$ npm init : 프로젝트로 전환
+$ npm install express : express 설치

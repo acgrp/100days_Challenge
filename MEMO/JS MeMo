@@ -63,6 +63,9 @@ nodeJS
             <%- include('파일경로', {키:해당 객체}) %>  파일경로에 있는 코드를 가져옴, 반복문같은 키를 사용할경우 그 해당 키가 어떤의미인지 연결해줘야함
 EXPRESS
             app.get(조건, 함수){내용}                  조건에 해당하는 함수 가져옴(함수 자리에는 함수이름 혹은 function(){}도 가능)                       
+              *조건에 주소가('/restaurants/:id',함수)     id위치에 오는 값을 받아서 실행(:id는 url파라미터라고 함)
+            res.params.id                            url에서 id에 들어온 값 꺼내기
+            res.render('파일경로', {rid:restaurants}) 파일경로를 랜더링, rid는 템플릿에 넘겨줄 데이터 객체, 뷰 파일에 <%= rid %>으로 해두면 id값이 출력
             res.send(반환내용)                        함수 조건에 맞을경우 반환내용을 반환, end와 비슷한 의미
             const express = require('express')       package.json에서 가져온 express라는 패키지
             express.urlencoded                       Express에서 제공하는 내장 미들웨어, HTML <form>에서 보내는 데이터 형식, 사용자가 <form>에 입력해서 POST로 보낸 데이터를 읽고 해석후 req.body에 넣어주는 역할

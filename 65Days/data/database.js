@@ -11,7 +11,7 @@ async function connect() {
 
 function getDb() {
     if(!database){
-        throw {message: 'Database connection not estalished!'};
+        throw {message: 'Database connection not established!'};
     }
     return database;
 }

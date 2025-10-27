@@ -50,12 +50,20 @@ router.post("/posts", async function (req, res) {
   res.redirect("/posts");
 });
 
-router.get("/posts/:id", async function (req, res) {
+router.get("/posts/:id", async function (req, res, next) {
   const postId = req.params.id;
+
+  try {
+      postId = new ObjectId(postId);
+  } catch (error) {
+    //eturn res.status(404).render("404"); 둘다 가능
+    return next(error);
+  }
+
   const post = await db
     .getDb()
     .collection("posts")
-    .findOne({ _id: new ObjectId(postId) }, { summary: 0 }); //findOne은 일치하는 첫번째
+    .findOne({ _id: postId }, { summary: 0 }); //findOne은 일치하는 첫번째
 
   if (!post) {
     return res.status(404).render("404");

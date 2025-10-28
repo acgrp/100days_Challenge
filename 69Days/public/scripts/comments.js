@@ -22,14 +22,28 @@ commentListElement.appendChild(commentElement);
 
 async function fetchCommentsForPost() {
   const postId = loadCommentsBtnElement.dataset.postid;
-  const response = await fetch(`/posts/${postId}/comments`);
+  try {
+ const response = await fetch(`/posts/${postId}/comments`);
+
+  if(!response.ok) {
+    alert('Fetching comments failed!');
+    return;
+  }
   const responseData = await response.json();
   
+  if (responseData && responseData.length > 0) {
   const commentsListElement = createCommentsList(responseData.comments);
   commentsSectionElement.innerHTML = '';
   commentsSectionElement.appendChild(commentsListElement);
+  } else {
+    commentsSectionElement.firstElementChild.textContent = '댓글을 찾을 수 없습니다. 추가하시겠습니까?';
+  }
+  }catch (error) {
+    alert('댓글 가져오기에 실패했습니다!');
+  }
 }
- function saveComment(event) {
+
+ async function saveComment(event) {
     event.preventDefault();
     const postId = commentsFormElement.dataset.postid;
 
@@ -38,13 +52,23 @@ async function fetchCommentsForPost() {
 
     const comment = {title: enteredTitle, text: enteredText};
 
-    fetch(`/posts/${postId}/comments`, {
-        method: 'POST',
-        body: JSON.stringify(comment),
-        headers: {
-            'Content-type': 'application/json'
-        }
-    });
+    try{
+      const response = await fetch(`/posts/${postId}/comments`, {
+          method: 'POST',
+          body: JSON.stringify(comment),
+          headers: {
+              'Content-type': 'application/json'
+          },
+      });
+    if(response.ok) {
+      fetchCommentsForPost();
+    } else {
+      alert('댓글을 보낼 수 없습니다.');
+    }
+    } catch (error) {
+      alert('Could not send request - maybe try again later!');
+    }
+
  }
 
 loadCommentsBtnElement.addEventListener("click", fetchCommentsForPost);

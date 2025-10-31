@@ -26,9 +26,12 @@ app.use(session({
   secret: 'super-secret',
   resave: false,
   saveUninitialized: false,
-  store: sessionStore
+  store: sessionStore,
+  cookie: {
+    maxAge: 1000 * 60 * 60 
+  }
 }));
-
+ 
 app.use(demoRoutes);//이 코드덕에 demo.js에서 /login /signup /admin 사용 가능
 app.use(function(error, req, res, next) {//express에서 자동으로 구분, 코드 중간에 에러가 발생하면 express가 이 미들웨어를 찾아서 실행함
   res.render('500');

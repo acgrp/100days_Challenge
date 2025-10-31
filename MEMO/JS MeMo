@@ -1,14 +1,19 @@
 요소 선택    document.getElementById("id")	          id로 요소 가져오기 (단 하나)		        
             document.getElementsByClassName("class") 같은 class 가진 모든 요소 가져오기 (배열 비슷함)		
-            document.getElementsByTagName("tag")	 특정 태그(p, div 등) 전부 가져오기	
-            document.querySelector("선택자")	      CSS 선택자로 첫 번째 요소만 가져오기	  
+            document.getElementsByTagName("tag")	   특정 태그(p, div 등) 전부 가져오기	
+            document.querySelector("선택자")	        CSS 선택자로 첫 번째 요소만 가져오기	  
             document.querySelectorAll("선택자")	      CSS 선택자로 모든 요소 가져오기 (NodeList)
             document.createElement("div")             div을 만듬 (다른것도 가능)
             formElement.firstElementChild            html에 form에 첫번째 자식을 선택
             formElement.lastElementChild             html에 form에 마지막 자식을 선택
-
+            대상.replaceChild(input, textNode)        textNode를 input으로 바꾼다
+            대상.querySelector("클래스이름")           "클래스이름"에 해당하는 부분 선택
+            대상.querySelector("선택자")               해당 선택자를 선택
+            대상.nextElementSibling                   대상의 바로 다음 부분을 선택
+            이벤트.preventDefault()                   폼 제출과 줄바꿈을 방지함
+            
 내용 변경    .textContent	                           텍스트만 변경 (HTML 태그는 글자로 처리됨)		
-            .innerHTML	                             HTML 태그 포함해서 내용 변경
+            .innerHTML	                             HTML 태그 포함해서 내용 전부 변경
             appendChild()                           자식요소에 추가
             document.createElement('태그')            새 HTML 요소 생성
             

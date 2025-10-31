@@ -39,7 +39,7 @@ router.post("/signup", async function (req, res) {
   const existingUser = await db
     .getDb()
     .collection("users")
-    .findOne({ email: enteredEmail });
+    .findOne({ email: enteredEmail }); 
 
     if (existingUser) {
       console.log('User exists already');
@@ -82,15 +82,27 @@ router.post("/login", async function (req, res) {
     console.log("암호가 일치하지 않습니다.");
     return res.redirect("/login");
   }
+  req.session.user = { id: existingUser._id.toString(), email: existingUser.email };
+  req.session.isAuthenticated = true;
+  req.session.save(function() { //해당 데이터를 데이터베이스에 강제 저장
 
-  console.log("User is authenticated!");
-  res.redirect("/admin");
+    res.redirect("/admin");
+  });
+    
+
 });
 
 router.get("/admin", function (req, res) {
+  if (!req.session.isAuthenticated) {
+    return res.status(401).render('401');
+  }
   res.render("admin");
 });
 
-router.post("/logout", function (req, res) {});
+router.post("/logout", function (req, res) {
+  req.session.user = null;
+  req.session.isAuthenticated = false;
+  res.redirect('/');
+});
 
 module.exports = router;

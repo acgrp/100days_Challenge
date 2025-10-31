@@ -10,7 +10,7 @@ async function connectToDatabase() {
   );
   database = client.db('auth-demo');
 }
-
+ 
 function getDb() {
   if (!database) {
     throw { message: 'You must connect first!' };

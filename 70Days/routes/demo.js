@@ -10,7 +10,20 @@ router.get("/", function (req, res) {
 });
 
 router.get("/signup", function (req, res) {
-  res.render("signup");
+  let sessionInputData = req.session.inputData;
+
+  if (!sessionInputData) {
+    sessionInputData = {
+      hasError: false,
+      email: '',
+      confirmEmail: '',
+      password: ''
+    };
+  }
+
+  req.session.inputData = null;
+
+  res.render("signup", { inputData: sessionInputData });
 });
 
 router.get("/login", function (req, res) {
@@ -20,20 +33,32 @@ router.get("/login", function (req, res) {
 router.post("/signup", async function (req, res) {
   const userData = req.body;
   const enteredEmail = userData.email;
-  const enteredComfirmEmail = userData["confirm-email"];
+  const enteredConfirmEmail = userData["confirm-email"];
   const enteredPassword = userData.password;
 
   if (
     !enteredEmail ||
     !enteredConfirmEmail ||
     !enteredPassword ||
-    enteredPassword.trim() < 6 ||
+    enteredPassword.trim().length < 6 ||
     enteredEmail !== enteredConfirmEmail ||
-    enteredEmail.includes("@")
+    !enteredEmail.includes("@")
   ) {
-    console.log("Incorrect data");
-    return res.redirect("/signup");
-    
+
+    req.session.inputData = {
+      hasError: true,
+      message: 'invalid input - please check your data',
+      email: enteredEmail,
+      confirmEmail: enteredConfirmEmail,
+      password: enteredPassword
+    };  
+
+    req.session.save(function () {
+      return res.redirect('/signup');
+    });
+    return;
+
+    // return res.render('signup');
   }
 
   const existingUser = await db
@@ -92,7 +117,7 @@ router.post("/login", async function (req, res) {
 
 });
 
-router.get("/admin", function (req, res) {
+     router.get("/admin", function (req, res) {
   if (!req.session.isAuthenticated) {
     return res.status(401).render('401');
   }

@@ -2,12 +2,11 @@ const path = require('path');
 
 const express = require('express');
 const session = require('express-session');
-const mongodbStore = require('connect-mongodb-session');
+
+const MongoDbStore = require('connect-mongodb-session')(session);
 
 const db = require('./data/database');
 const demoRoutes = require('./routes/demo');
-
-const MongoDbStore = mongodbStore(session);
 
 const app = express();
 
@@ -32,7 +31,26 @@ app.use(session({
   }
 }));
  
+app.use(async function(req, res, next) {
+  const user = req.session.user;
+  const isAuth = req.session.isAuthenticated;
+  
+  if(!user || !isAuth) {
+    return next();
+  }
+  
+  const userDoc = await db.getDb().collection('users').findOne({_id: user.id})
+  const isAdmin = userDoc.isAdmin;
+  
+  
+  res.locals.isAuth = isAuth; //전역 변수?
+  res.locals.isAdmin = isAdmin;
+  next();
+
+});
+
 app.use(demoRoutes);//이 코드덕에 demo.js에서 /login /signup /admin 사용 가능
+
 app.use(function(error, req, res, next) {//express에서 자동으로 구분, 코드 중간에 에러가 발생하면 express가 이 미들웨어를 찾아서 실행함
   res.render('500');
 })

@@ -11,6 +11,7 @@
             대상.querySelector("선택자")               해당 선택자를 선택
             대상.nextElementSibling                   대상의 바로 다음 부분을 선택
             이벤트.preventDefault()                   폼 제출과 줄바꿈을 방지함
+            writeFileSync(파일경로, 데이터)            파일에 데이터를 동기적으로 쓰는 함수
             
 내용 변경    .textContent	                           텍스트만 변경 (HTML 태그는 글자로 처리됨)		
             .innerHTML	                             HTML 태그 포함해서 내용 전부 변경
@@ -21,6 +22,7 @@
             .getAttribute("속성")	                  속성 값 가져오기	
             
 스타일 변경	  .style.속성명                             CSS 속성 변경 (카멜케이스 사용)	
+             JSON.stringify(value, replacer, space)  value: 변환할 값 / replacer: 특정 키만 포함시키거나 제외할 때 쓰는 함수. 안쓰면null / space: 들여쓰기 칸 수. 숫자는 ""두칸 들여쓰기
 
 클래스 제어	  .classList.add("이름")	                클래스 추가	
 	          .classList.remove("이름")	              클래스 제거		

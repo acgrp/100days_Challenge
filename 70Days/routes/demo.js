@@ -169,10 +169,10 @@ const user = await db.getDb().collection('users')
     console.log("⚠️ 관리자 권한 없음");
     return res.status(403).render('403');
   }
-  res.render("admin");
-   } catch (error) {
-    console.error("⚠️ /admin 라우트 오류:", error);
-    res.status(500).render('500');
+  // res.render("admin");
+  //  } catch (error) {
+  //   console.error("⚠️ /admin 라우트 오류:", error);
+  //   res.status(500).render('500');s
 });
 
      router.get("/profile", function (req, res) {
@@ -190,4 +190,4 @@ router.post("/logout", function (req, res) {
 });
 
 module.exports = router;
-//망함 추후에 다시 도전할예정 userDOC 추가부터 오류발생
+//망함, 추후에 다시 도전할예정 userDOC 추가부터 오류발생

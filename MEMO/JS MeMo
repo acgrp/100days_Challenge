@@ -89,3 +89,8 @@ EXPRESS
 
 각종 패키지
 promise     ~.then /~.catch / async function ~ await 비동기 작업을 올바르게 적용되기위해 사용
+
+mongoDB     
+            await MongoClient.connect()              실제 괄호안에 주소랑 mongoDB연결 
+            client.db('auth-blog')                   'auth-blog'라는 DB 사용
+            getDb()                                  연결된 DB를 반환(연결안되면 오류)

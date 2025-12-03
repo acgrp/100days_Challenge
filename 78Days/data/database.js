@@ -5,7 +5,7 @@ const MongoClient = mongodb.MongoClient;
 let database;
 
 async function connectToDatabase() {
-    const client = await MongoClient.connect('mongodb://localgost:27017');// 몽고DB는 기본적으로 27017 사용
+    const client = await MongoClient.connect('mongodb://localhost:27017');// 몽고DB는 기본적으로 27017 사용
     database = client.db('online-shop');
 }
 

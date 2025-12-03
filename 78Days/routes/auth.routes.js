@@ -10,4 +10,10 @@ router.post('/signup', authController.signup);//post는 서버에 등록(데이�
 
 router.get('/login', authController.getLogin);
 
+router.post('/login', authController.login);
+
+router.post('/logout', authController.logout);
+
+router.post('/logout',authController.logout);
+
 module.exports = router;

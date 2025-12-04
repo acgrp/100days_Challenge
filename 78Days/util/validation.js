@@ -2,13 +2,13 @@ function isEmpty(value) {
   return !value || value.trim() === "";
 }
 
-function userCredentialAreValid(email, password) {
+function userCredentialsAreValid(email, password) {
   return (
     email && email.includes("@") && password && password.trim().length >= 6
   );
 }
 
-function userDetailsAreVaild(email, password, name, street, postal, city) {
+function userDetailsAreValid(email, password, name, street, postal, city) {
   return (
     userCredentialsAreValid(email, password) &&
     !isEmpty(name) &&
@@ -23,6 +23,6 @@ function emailIsConfirmed(email, confirmEmail) {
 }
 
 module.exports = {
-  userDetailsAreVaild: userDetailsAreVaild,
+  userDetailsAreValid: userDetailsAreValid,
   emailIsConfirmed: emailIsConfirmed,
 };

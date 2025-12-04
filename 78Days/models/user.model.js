@@ -20,7 +20,7 @@ class User { // 청사진 - 객체를 위한 설계도 역할
 
   async existAlready() {
     const existingUser = await this.getUserWithSameEmail();
-    if (existngUser) {
+    if (existingUser) {
         return true;
     }
         return false;

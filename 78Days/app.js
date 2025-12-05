@@ -12,6 +12,7 @@ const checkAuthStatusMiddleware = require('./middlewares/check-auth');
 const authRoutes = require('./routes/auth.routes');
 const baseRoutes = require('./routes/base.routes');
 const productsRoutes = require('./routes/products.route');
+const adminRoutes = require('./routes/admin.routes');
 
 const app = express();
 
@@ -29,14 +30,15 @@ app.use(csrf());
 app.use(addCsrfTokenMiddleware);
 app.use(checkAuthStatusMiddleware);
 
-app.use(errorHandlerMiddleware);
-('checkAuthStatus')
-
 app.use(baseRoutes);
 app.use(authRoutes);
 app.use(productsRoutes);
+app.use('/admin', adminRoutes);
 
-db.connectToDatabase().then(function() {
+app.use(errorHandlerMiddleware)
+
+db.connectToDatabase()
+.then(function() {
     app.listen(3000);
 }).catch(function(error) {  //then은 해당 프로미스가 성공할 경우 catch는 실패대비
     console.log('Failed to connect to the database!');

@@ -1,6 +1,6 @@
 const Product = require('../models/product.model');
 
-async function getProducts(req, res) {
+async function getProducts(req, res, next) {
     try {
         const products = await Product.findAll();
         res.render('admin/products/all-product', {products: products });
@@ -19,7 +19,6 @@ async function createNewProduct(req, res, next) {
         ...req.body,
         image: req.file.filename
     });
-
     try{
         await product.save();
 
@@ -31,8 +30,52 @@ async function createNewProduct(req, res, next) {
     res.redirect('/admin/products'); 
 }
 
+async function deleteProduct(req, res, next) {
+    let product;
+    try {
+        product = Product.findById(req.params.id);
+        (await product).remove();
+    }catch (error) {
+        return next(error);
+    }
+
+    res.redirect('/admin/products');
+}
+
+async function getUpdataProduct(req, res, next) {
+    try {
+        const product = await Product.findById(req.params.id);
+        res.render('admin/products/updata-product', {product: product });
+    }catch (error) {
+        next(error);
+    }
+}
+
+async function updataProduct(req, res, next) {
+    const product = new Product({
+        ...req.body,
+        _id: req.params.id
+    });
+
+    if (req.file) {
+        product.replaceImage(req.file.filename);
+    }
+
+    try{    
+        await product.save();
+    } catch (error) {
+        next(error);
+        return;
+    }
+
+    res.redirect('/admin/products');
+}
+
 module.exports = {
     getProducts: getProducts,
     getNewProduct: getNewProduct,
-    createNewProduct: createNewProduct
+    createNewProduct: createNewProduct,
+    getUpdataProduct: getUpdataProduct,
+    updataProduct: updataProduct,
+    deleteProduct: deleteProduct
 };

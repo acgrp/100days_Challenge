@@ -36,7 +36,7 @@ async function deleteProduct(req, res, next) {
         product = Product.findById(req.params.id);
         (await product).remove();
     }catch (error) {
-        return next(error);
+        next(error);
     }
 
     res.redirect('/admin/products');
@@ -50,26 +50,26 @@ async function getUpdataProduct(req, res, next) {
         next(error);
     }
 }
-
 async function updataProduct(req, res, next) {
     const product = new Product({
         ...req.body,
         _id: req.params.id
     });
-
     if (req.file) {
         product.replaceImage(req.file.filename);
     }
-
-    try{    
-        await product.save();
-    } catch (error) {
-        next(error);
-        return;
-    }
-
-    res.redirect('/admin/products');
 }
+    async function deleteProduct (req, res, next){
+        let product;
+        try{    
+            product = await Product.findById(req.params.id);
+            await product.remove();
+        } catch (error) {
+            return next(error);
+        }
+    
+        res.json({message: 'Deleted product!'});
+    }
 
 module.exports = {
     getProducts: getProducts,
@@ -78,4 +78,4 @@ module.exports = {
     getUpdataProduct: getUpdataProduct,
     updataProduct: updataProduct,
     deleteProduct: deleteProduct
-};
+}; 

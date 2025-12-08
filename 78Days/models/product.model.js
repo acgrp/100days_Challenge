@@ -1,4 +1,4 @@
-const mongdb = require('mongodb');
+const mongodb = require('mongodb');
 
 const  db = require('../data/database');
 
@@ -18,12 +18,15 @@ class Product {
     static async findById(productId) {
         let prodId;
         try {
-            prodId = new mongdb.ObjectId(productId);
+            prodId = new mongodb.ObjectId(productId);
         }catch(error) {
             error.code = 404;
             throw error;
         }
-        const product = await db.getDb().collection('products').findOne({_id: prodId });
+        const product = await db
+        .getDb()
+        .collection('products')
+        .findOne({_id: prodId });
 
         if(!product) {
             const error = new Error('Could not find product with provided id.');
@@ -57,7 +60,7 @@ class Product {
         };
 
         if(this.id) {
-            const productId = new mongdb.ObjectId(this.id);
+            const productId = new mongodb.ObjectId(this.id);
 
             if (!this.image) {
                 delete productData.image; //해당 키-값 쌍을 삭제
@@ -80,8 +83,8 @@ class Product {
     }
 
     remove() {
-        const productId = new MongoDBCollectionNamespace.ObjectId(this.id);
-        return db.getDb().collection('products').deleteOne({_id: this.id });
+        const productId = new mongodb.ObjectId(this.id);
+        return db.getDb().collection('products').deleteOne({_id: productId });
     }
 }
 

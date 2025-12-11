@@ -1,4 +1,5 @@
 const bcrypt = require('bcryptjs');
+const mongodb = require('mongodb');
 
 const db = require('../data/database');
 
@@ -12,6 +13,15 @@ class User { // 청사진 - 객체를 위한 설계도 역할
         postalCode: postal, 
         city: city
     };
+  }
+
+  static async findById(userId) {
+    const uid = new mongodb.ObjectId(userId);
+
+    return db
+    .getDb()
+    .collection('users')
+    .findOne({_id: uid}, { projection: {password:0 } });
   }
 
   getUserWithSameEmail() {

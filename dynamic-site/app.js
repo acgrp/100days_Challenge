@@ -5,6 +5,12 @@ const express = require('express');
 const db = require('./data/database');
 const mainRoutes = require('./routes/main.routes');
 
+let PORT = 3000;
+
+if (process.env.PORT) {
+  port = process.env.PORT;
+}
+
 const app = express();
 
 app.set('view engine', 'ejs');

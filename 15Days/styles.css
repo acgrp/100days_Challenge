@@ -1,0 +1,95 @@
+#hero {
+    height: 800px;
+    background-image: url("/15Days/images/places/ocean.jpg");
+    background-position: center;
+    background-size: cover;
+
+}
+
+#hero-content {
+    width: 900px;
+    background-color: rgba(51, 47, 47, 0.8); /*rgba는 반투명한 색(a의 수가 클수록 진해짐)*/
+    box-shadow: 2px 4px 8px rgb(68, 67, 67);
+    border-radius: 8px;
+    text-align: center;
+    padding: 50px 0;
+    margin: 0 auto;
+    position: relative;
+    top: 200px;
+}
+
+#hero-content h1 {
+    color: white;
+    text-transform: uppercase;
+    font-size: 50px;
+    font-family: "Roboto", sans-serif;
+    margin: 0;
+}
+
+#hero-content p {
+    color: white;
+    text-transform: uppercase; /* uppercase : 전부 대문자로, lowercase : 전부 소문자로*/
+    font-size: 24px;
+    font-weight: 200;
+    margin-bottom: 32px;
+}
+
+#hero-content a {
+    text-decoration: none;
+    background-color: rgb(255, 251, 0);
+    padding: 12px 24px;
+    color: black;
+    font-size: 24px;
+    font-weight: bold; /* 숫자로도 가능 */
+    border-radius: 8px;
+    box-shadow: 2px 4px 8px rgb(68, 67, 67);
+}
+
+#hero-content a:hover {
+    background-color: rgb(255, 238, 0);
+}
+
+#highlights {
+    padding: 24px;
+    background: linear-gradient(45deg, rgb(227,255,253), rgb(98, 201, 178));  /*deg는 각도 - 360도 시계방향으로 회전, 첫번째색이 아래 두번째색이 위에로 지정*/
+}
+
+#highlights h2{
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 40px;
+    color: rgb(59, 65, 64);
+    margin: 24px 0;
+}
+
+#Destinations {
+    display: flex;
+    width: 90%;
+    margin: auto;
+    margin-bottom: 40px;
+    justify-content: center;   /*flex box의 내용을 가운데로 모으는 것*/
+}
+
+.Destinations {
+    margin: 0 20px;
+    text-transform: uppercase;
+}
+
+.Destinations p {
+    text-align: center;
+    font-size: 24px;
+    color: rgb(124, 123, 123);
+    margin: 20px 0;
+}
+
+.Destinations strong {
+    color: rgb(0, 160, 117);
+}
+
+.Destinations img {
+    height: 200px;
+    width: 100%;    /*서로 크기가 달라서 각자 크기가 다름, 고정값으로 해도 flex box가 남은 공간이 생기기때문에 %로 해결*/
+    box-shadow: 2px 4px 8px rgb(68, 67, 67);
+    border-radius: 10px;
+    object-fit: cover;  /*이미지가 담기는 비율을 조절하는 부분(fill : 기본값으로 찌그러질수 있음, contain : 컨테이너에 빈공간을 만들어 채움, cover : 비율 그대로 컨테이너에 꽉 채우기  )*/
+}

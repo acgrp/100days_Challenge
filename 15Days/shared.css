@@ -1,0 +1,76 @@
+body {
+    font-family: "Roboto", sans-serif;
+    margin: 0;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 60px;
+    position: absolute; /*absolute : 배경 해더까지 올리기, 이후 fixed : 상단에 고정, static : 기본값*/
+    width: 100%;
+    box-sizing: border-box;  /*width 100%을 사용하면 header가 body보다 크던걸 같게만듬듬 */
+    top: 0;
+    left: 0;   /*position: absolute; 때문에 0으로 이미 되어있어서 불필요*/
+}
+
+#page-logo a {
+    padding: 10px;
+    font-family: "Bitcount Prop Single", sans-serif ; 
+    color: rgb(207, 206, 108);
+    font-size: 50px;
+    text-decoration: NONE;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0);
+}
+
+header ul {
+    display: flex;
+}
+
+header li {
+    margin-left: 20px;
+}
+
+header a {
+    color: rgb(255, 251, 0);
+    text-decoration: none;
+    font-size: 20px;
+    padding: 12px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0);
+    border-radius: 6px;
+}
+
+header nav a:hover {
+    color: rgb(77, 77, 77);
+    background-color: rgb(255, 251, 0);
+}
+
+footer {
+    background: linear-gradient(70deg, rgb(24, 24, 24), rgb(25, 29, 29));
+    padding: 36px 0;
+}
+
+footer ul {
+    display: flex;  /*아이콘들 옆으로 정렬*/
+    justify-content: center;   /*플렉스 컨테이너 가운데로 옮기고 남은 빈공간은 좌우에 배치*/
+}
+
+footer li  {
+    width: 80px;
+    height: 80px;
+    margin: 50px 50px;
+}
+
+footer img {
+    width: 100%;
+    height: 100%;
+    
+}

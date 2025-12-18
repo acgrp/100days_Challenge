@@ -1,0 +1,94 @@
+body {
+    background-color: rgb(218, 243, 253);
+}
+
+h1 {
+    text-align: center;
+    margin: 2rem;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+form {
+    width: 40rem;
+    margin: auto;
+    background-color: rgb(193, 235, 252);
+    padding: 1rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+}
+
+label {
+    margin-bottom: 0.5rem;
+    display: block;
+    font-weight: bold; /* 글씨 두껍게 */
+}
+
+input,
+select,
+textarea{
+    width: 100%;
+    display: block;
+    margin-bottom: 1rem;
+    font: inherit;
+    border: 1px solid rgb(184, 184, 184);
+    border-radius: 4px;
+    color: rgb(100, 100, 100);
+}
+
+textarea {
+    resize: none;
+}
+
+input:focus,
+textarea:focus {
+    background-color: rgb(189, 222, 253);
+    color: rgb(40, 40, 40);
+    border-color: rgb(40, 40, 40);
+}
+
+button {
+    font: inherit;
+    border: 1px solid rgb(51, 67, 100);
+    border-radius: 4px;
+    box-shadow: 1px 1px rgb(40, 40, 40);
+    padding: 0.5rem 1.5rem;
+    gap: 10px;
+    cursor: pointer;
+}
+
+#button {
+    text-align: right;
+}
+
+label {
+    display: block;
+}
+
+.close:hover {
+    background-color: rgb(187, 187, 187);
+    border-color: rgb(187, 187, 187);
+}
+
+.submit {
+    background-color: rgb(5, 0, 48);
+    color: white;
+}
+
+.submit:hover {
+    background-color: rgb(20, 0, 196);
+    border-color: rgb(20, 0, 196);
+}
+
+.form-control-inline {
+    display: flex;
+}
+
+.form-control-inline input {
+    width: auto;
+    margin: 0.5rem;
+}

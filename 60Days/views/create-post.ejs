@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en"> <!-- 문서의 언어를 영어로 지정 -->
+
+<head>
+  <%- include('includes/head', { title: 'Add new post' }) %>
+  <link rel="stylesheet" href="/styles/forms.css">
+</head>
+
+<body>
+  <%- include('includes/header') %> 
+  <main>
+    <h1>Add a new post</h1>
+    <form action="/posts" method="POST"><!-- 사용자 입력을 받는 폼을 만들고 action=/posts 제출 시 posts경로로 요청 보냄(method = "POST"방식으로 서버에 전달)) -->
+      <div class="form-control">
+        <label for="title">Title</label>
+        <input type="text" id="title" name="title" required>
+      </div>
+      <div class="form-control">
+        <label for="summary">Summary</label>
+        <input type="text" id="summary" name="summary" required maxlength="255">
+      </div>
+      <div class="form-control">
+        <label for="content">Post Content</label>
+        <textarea id="content" name="content" required rows="5"></textarea>
+      </div>
+      <div class="form-control">
+        <label for="author">Select Author</label><!-- 안내문구 -->
+        <select id="author" name="author"><!-- 선택박스 생성 -->
+          <% for (const author of authors) {%> <!-- 선택지 하나하나 생성하는 코드(routes에 blog.js 파일 17번재에 authors에 sql을 보냄) -->
+            <option value="<%= author.id %>"><%= author.name %></option><!-- 그 선택지 하나하나 -->
+          <% } %>
+        </select>
+      </div>
+      <button class="btn">Add Post</button>
+    </form>
+  </main>
+</body>
+
+</html>
